@@ -4,7 +4,7 @@ Name:		kmol
 Version:	0.3.2
 Release:	0.1
 License:	GPL v2
-Group:		Applications/Communications
+Group:		X11/Applications/Science
 Source0:	http://www.idiom.com/~tomi/%{name}-%{version}.tar.bz2
 URL:		http://www.idiom.com/~tomi/kmol.html
 BuildRequires:	autoconf
