@@ -10,13 +10,12 @@ Source0:	http://www.idiom.com/~tomi/%{name}-%{version}.tar.bz2
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 # Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 URL:		http://www.idiom.com/~tomi/kmol.html
-BuildRequires:  autoconf
-BuildRequires:  automake
-BuildRequires:  kdelibs-devel >= 9:3.2.0
-BuildRequires:  unsermake >= 040805
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	unsermake >= 040805
 BuildRequires:	libart_lgpl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 KMol is a simple chemical calculator, which calculates molecular
