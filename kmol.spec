@@ -1,5 +1,5 @@
-Summary:	KMol - a molecular weight and elemental composition calculator.
-#Summary(pl):
+Summary:	KMol - a molecular weight and elemental composition calculator
+Summary(pl):	KMol - kalkulator do liczenia wagi cz±stek i zwi±zków
 Name:		kmol
 Version:	0.3.2
 Release:	0.1
@@ -34,8 +34,22 @@ KMol can deal with:
  - Fractional coefficients: Cu3.14O2.72.
  - User-defined symbols, which override the global defaults.
 
-# I don't know how to translate it human-readable 
-#%description -l pl
+%description -l pl
+KMol to prosty kalkulator chemiczny, licz±cy wagi cz±steczek oraz
+zwi±zków chemicznych na podstawie ich wzorów chemicznych.
+
+KMol zosta³ tak napisany, by byæ w stanie odczytaæ ka¿dy wzór
+chemiczny, który mo¿e byæ jednoznacznie zinterpretowany je¶li jest
+napisany przy u¿yciu ci±gu zwyk³ych znaków (bez indeksów dolnych i
+górnych). Je¶li jeste¶ w stanie zrozumieæ jaki¶ wzór, s± szanse, ¿e
+KMol zrozumie go tak samo. Je¶li nie mo¿esz, czy to wina KMola?
+Program radzi sobie z:
+ - nieograniczon± liczb± zagnie¿d¿onych podgrup:
+   (CH3(C6H3)N(SiMe(CMe3)2))2Y(thf)2(CH(SiMe3)2)
+ - zwi±zkami wielosk³adnikowymi: K2SO4+Al2(SO4)3+24H2O
+ - wspó³czynnikami u³amkowymi: Cu3.14O2.72
+ - symbolami zdefiniowanymi przez u¿ytkownika, przykrywaj±cymi
+   domy¶lne ich znaczenie.
 
 %prep
 %setup -q
@@ -53,14 +67,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog INSTALL README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog INSTALL README TODO
 #%attr(755,root,root) %{_bindir}/*
 #%{_applnkdir}/Network/Communications/*.desktop
-#%{_datadir}/icons/hicolor/*/*/*.png
+#%{_pixmapsdir}/hicolor/*/*/*.png
