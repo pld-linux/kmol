@@ -1,21 +1,22 @@
 Summary:	KMol - a molecular weight and elemental composition calculator
 Summary(pl):	KMol - kalkulator do liczenia wagi cz±stek i zwi±zków
 Name:		kmol
-Version:	0.3.2
+Version:	0.3.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Science
 Source0:	http://www.idiom.com/~tomi/%{name}-%{version}.tar.bz2
-# Source0-md5:	69e3310b6371fa3ecad8337677983105
+# Source0-md5:	7efb66b84e5424b959549703aa61cca0
+Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
+# Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 URL:		http://www.idiom.com/~tomi/kmol.html
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	kdelibs-devel
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  kdelibs-devel >= 9:3.2.0
+BuildRequires:  unsermake >= 040805
 BuildRequires:	libart_lgpl-devel
-BuildRequires:	qt-devel >= 2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_htmldir	%{_docdir}/kde/HTML
 
 %description
 KMol is a simple chemical calculator, which calculates molecular
@@ -53,36 +54,30 @@ Program radzi sobie z:
    domy¶lne ich znaczenie.
 
 %prep
-%setup -q
-
-# don't force rebuilding ac/am after running configure
-sed -e '12,$d' Makefile.am > Makefile.am.tmp
-mv -f Makefile.am.tmp Makefile.am
+%setup -q -a1
 
 %build
-rm -f missing
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%{__perl} admin/am_edit -padmin
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-%configure
+cp -f /usr/share/automake/config.sub admin
+export UNSERMAKE=/usr/share/unsermake/unsermake
 
-%{__make} \
-	LIB_KFILE=
+%{__make} -f admin/Makefile.common cvs
+
+%configure \
+	--with-qt-libraries=%{_libdir}
+
+%{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_libs_htmldir=%{_kdedocdir} \
+	kde_htmldir=%{_kdedocdir}
 
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Scientific/Chemistry
-mv -f $RPM_BUILD_ROOT%{_applnkdir}/{Applications,Scientific/Chemistry}/kmol.desktop
 
+mv -f $RPM_BUILD_ROOT{%{_datadir}/applnk/Applications,%{_desktopdir}}/kmol.desktop
+echo "Categories=Qt;KDE;Education;Science;Chemistry;" >> $RPM_BUILD_ROOT%{_desktopdir}/kmol.desktop
 %find_lang %{name} --with-kde
 
 %clean
@@ -93,5 +88,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kmol
-%{_applnkdir}/Scientific/Chemistry/kmol.desktop
-%{_pixmapsdir}/*/*/apps/*.png
+%{_desktopdir}/kmol.desktop
+%{_iconsdir}/*/*/apps/*.png
