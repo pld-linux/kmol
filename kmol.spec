@@ -43,7 +43,7 @@ KMol can deal with:
 %build
 rm -f missing
 aclocal
-autoconf
+%{__autoconf}
 automake -a -c
 %configure
 %{__make}
