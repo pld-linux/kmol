@@ -56,9 +56,9 @@ Program radzi sobie z:
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
-automake -a -c
+%{__automake}
 %configure
 %{__make}
 
