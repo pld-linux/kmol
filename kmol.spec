@@ -6,6 +6,7 @@ Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Science
 Source0:	http://www.idiom.com/~tomi/%{name}-%{version}.tar.bz2
+# Source0-md5:	69e3310b6371fa3ecad8337677983105
 URL:		http://www.idiom.com/~tomi/kmol.html
 BuildRequires:	autoconf
 BuildRequires:	automake
