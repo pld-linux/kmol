@@ -72,5 +72,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog INSTALL README TODO
 #%attr(755,root,root) %{_bindir}/*
-#%{_applnkdir}/Network/Communications/*.desktop
-#%{_pixmapsdir}/hicolor/*/*/*.png
+#%%{_applnkdir}/Network/Communications/*.desktop
+#%%{_pixmapsdir}/hicolor/*/*/*.png
