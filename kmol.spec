@@ -2,13 +2,14 @@ Summary:	KMol - a molecular weight and elemental composition calculator
 Summary(pl):	KMol - kalkulator do liczenia wagi cz±stek i zwi±zków
 Name:		kmol
 Version:	0.3.3
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Science
 Source0:	http://www.idiom.com/~tomi/%{name}-%{version}.tar.bz2
 # Source0-md5:	7efb66b84e5424b959549703aa61cca0
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 # Source1-md5:	81e0b2f79ef76218381270960ac0f55f
+Patch0:		%{name}-desktop.patch
 URL:		http://www.idiom.com/~tomi/kmol.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -55,6 +56,7 @@ Program radzi sobie z:
 
 %prep
 %setup -q -a1
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -77,7 +79,6 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 
 mv -f $RPM_BUILD_ROOT{%{_datadir}/applnk/Applications,%{_desktopdir}}/kmol.desktop
-echo "Categories=Qt;KDE;Education;Science;Chemistry;" >> $RPM_BUILD_ROOT%{_desktopdir}/kmol.desktop
 %find_lang %{name} --with-kde
 
 %clean
