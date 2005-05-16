@@ -1,0 +1,20 @@
+--- kmol-0.3.3/kmol/kmol.desktop~	Mon May 16 13:35:00 2005
++++ kmol-0.3.3/kmol/kmol.desktop	Mon May 16 13:36:25 2005
+@@ -1,12 +1,13 @@
+ # KDE Config File  
+ [Desktop Entry]
++Encoding=UTF-8
+ Type=Application
+ Exec=kmol -caption "%c" %i %m  
+ Icon=kmol.png
+ MiniIcon=kmol.png
+ DocPath=kmol/index.html
+-Comment=
+-Comment[de]=
+-Terminal=0
++Comment=Simple chemical calculator
++Comment[pl]=Prosty kalkulator chemiczny
++Terminal=false
+ Name=KMol
+-Name[de]=KMol
++Categories=Qt;KDE;Education;Science;Chemistry;
