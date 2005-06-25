@@ -90,4 +90,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kmol
 %{_desktopdir}/kmol.desktop
-%{_iconsdir}/*/*/apps/*.png
+%{_iconsdir}/hicolor/*/apps/*.png
