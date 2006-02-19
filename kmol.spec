@@ -8,7 +8,7 @@ Group:		X11/Applications/Science
 Source0:	http://gountchev.net/%{name}-%{version}.tar.bz2
 # Source0-md5:	7efb66b84e5424b959549703aa61cca0
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
-# Source1-md5:	84b116d69c17981c75afc70a7d0dcb6d
+# Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 Patch0:		%{name}-desktop.patch
 URL:		http://http://gountchev.net/kmol.html
 BuildRequires:	autoconf
