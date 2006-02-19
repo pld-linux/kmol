@@ -10,7 +10,7 @@ Source0:	http://gountchev.net/%{name}-%{version}.tar.bz2
 Source1:        http://ep09.pld-linux.org/~djurban/kde/kde-common-admin.tar.bz2
 # Source1-md5:	81e0b2f79ef76218381270960ac0f55f
 Patch0:		%{name}-desktop.patch
-URL:		http://http://gountchev.net/kmol.html
+URL:		http://gountchev.net/kmol.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
