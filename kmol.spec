@@ -1,5 +1,5 @@
 Summary:	KMol - a molecular weight and elemental composition calculator
-Summary(pl):	KMol - kalkulator do liczenia wagi cz±stek i zwi±zków
+Summary(pl.UTF-8):   KMol - kalkulator do liczenia wagi czÄ…stek i zwiÄ…zkÃ³w
 Name:		kmol
 Version:	0.3.3
 Release:	2
@@ -37,22 +37,22 @@ KMol can deal with:
  - Fractional coefficients: Cu3.14O2.72.
  - User-defined symbols, which override the global defaults.
 
-%description -l pl
-KMol to prosty kalkulator chemiczny, licz±cy wagi cz±steczek oraz
-zwi±zków chemicznych na podstawie ich wzorów chemicznych.
+%description -l pl.UTF-8
+KMol to prosty kalkulator chemiczny, liczÄ…cy wagi czÄ…steczek oraz
+zwiÄ…zkÃ³w chemicznych na podstawie ich wzorÃ³w chemicznych.
 
-KMol zosta³ tak napisany, by byæ w stanie odczytaæ ka¿dy wzór
-chemiczny, który mo¿e byæ jednoznacznie zinterpretowany je¶li jest
-napisany przy u¿yciu ci±gu zwyk³ych znaków (bez indeksów dolnych i
-górnych). Je¶li jeste¶ w stanie zrozumieæ jaki¶ wzór, s± szanse, ¿e
-KMol zrozumie go tak samo. Je¶li nie mo¿esz, czy to wina KMola?
+KMol zostaÅ‚ tak napisany, by byÄ‡ w stanie odczytaÄ‡ kaÅ¼dy wzÃ³r
+chemiczny, ktÃ³ry moÅ¼e byÄ‡ jednoznacznie zinterpretowany jeÅ›li jest
+napisany przy uÅ¼yciu ciÄ…gu zwykÅ‚ych znakÃ³w (bez indeksÃ³w dolnych i
+gÃ³rnych). JeÅ›li jesteÅ› w stanie zrozumieÄ‡ jakiÅ› wzÃ³r, sÄ… szanse, Å¼e
+KMol zrozumie go tak samo. JeÅ›li nie moÅ¼esz, czy to wina KMola?
 Program radzi sobie z:
- - nieograniczon± liczb± zagnie¿d¿onych podgrup:
+ - nieograniczonÄ… liczbÄ… zagnieÅ¼dÅ¼onych podgrup:
    (CH3(C6H3)N(SiMe(CMe3)2))2Y(thf)2(CH(SiMe3)2)
- - zwi±zkami wielosk³adnikowymi: K2SO4+Al2(SO4)3+24H2O
- - wspó³czynnikami u³amkowymi: Cu3.14O2.72
- - symbolami zdefiniowanymi przez u¿ytkownika, przykrywaj±cymi
-   domy¶lne ich znaczenie.
+ - zwiÄ…zkami wieloskÅ‚adnikowymi: K2SO4+Al2(SO4)3+24H2O
+ - wspÃ³Å‚czynnikami uÅ‚amkowymi: Cu3.14O2.72
+ - symbolami zdefiniowanymi przez uÅ¼ytkownika, przykrywajÄ…cymi
+   domyÅ›lne ich znaczenie.
 
 %prep
 %setup -q -a1
