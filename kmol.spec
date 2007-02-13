@@ -1,5 +1,5 @@
 Summary:	KMol - a molecular weight and elemental composition calculator
-Summary(pl.UTF-8):   KMol - kalkulator do liczenia wagi cząstek i związków
+Summary(pl.UTF-8):	KMol - kalkulator do liczenia wagi cząstek i związków
 Name:		kmol
 Version:	0.3.3
 Release:	2
